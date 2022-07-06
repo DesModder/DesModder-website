@@ -1,6 +1,6 @@
 # Manim Website
 
-This repository is the website to be deployed at [desmodder.com](https://desmodder.com]/).
+This repository is the website to be deployed at [desmodder.com](https://desmodder.com/).
 
 This is a [Gatsby](https://www.gatsbyjs.com/) project.
 

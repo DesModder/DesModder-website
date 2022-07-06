@@ -1,0 +1,1 @@
+{"version":3,"file":"component---src-pages-index-js-a75367af98e7a70826d5.js","mappings":"sLAEe,SAASA,IACtB,OAAO","sources":["webpack://desmodder-website/./src/pages/index.js"],"sourcesContent":["import React from \"react\";\n\nexport default function IndexPage() {\n  return <div>Test</div>;\n}\n"],"names":["IndexPage"],"sourceRoot":""}

@@ -1,5 +1,8 @@
 ---
 title: Text
+eleventyNavigation:
+  parent: text-mode
+  key: Text
 ---
 
 Text is the simplest item type.

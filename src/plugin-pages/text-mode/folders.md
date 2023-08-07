@@ -1,5 +1,8 @@
 ---
 title: Folders
+eleventyNavigation:
+  parent: text-mode
+  key: Folders
 ---
 
 Folders are a structuring mechanism. Each folder must have a title specified as a string, and they may contain any statement except for another folder (nested folders are not yet supported)

@@ -1,5 +1,4 @@
 {
-  "layout": "post",
   "tags": "general-pages",
   "permalink": "{{ page.filePathStem | remove: '/general-pages' | remove: '/index' }}/"
 }

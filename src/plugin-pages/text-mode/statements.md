@@ -1,5 +1,8 @@
 ---
 title: Statement
+eleventyNavigation:
+  parent: text-mode
+  key: Statement
 ---
 
 Statements are the core of graphs. They are all based around some math expression, with an optional style mapping and (for regressions) a regression value mapping.

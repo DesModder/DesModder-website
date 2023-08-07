@@ -1,6 +1,10 @@
 ---
 title: Installation
 tags: top
+eleventyNavigation:
+  parent: DesModder
+  key: Installation
+  order: 0
 ---
 
 ## Preferred: Install from Webstore

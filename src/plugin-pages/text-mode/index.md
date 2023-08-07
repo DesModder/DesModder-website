@@ -1,6 +1,10 @@
 ---
 title: Text Mode
-override:tags: ["plugins"]
+eleventyNavigation:
+  parent: DesModder
+  key: text-mode
+  title: Text Mode
+  order: 2
 ---
 
 Text Mode is a way to edit Desmos graphs using plaintext (code) instead of the vanilla approach which uses MathQuill (fancy math formatting) and UI menus.

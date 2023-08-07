@@ -1,5 +1,8 @@
 ---
 title: Tickers
+eleventyNavigation:
+  parent: text-mode
+  key: Tickers
 ---
 
 The basic syntax of a ticker is just `ticker` followed by an expression.

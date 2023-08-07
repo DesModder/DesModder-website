@@ -1,5 +1,8 @@
 ---
 title: Style Mappings
+eleventyNavigation:
+  parent: text-mode
+  key: Style Mappings
 ---
 
 Text Mode doesn't rely on a varity of UIs for styles; instead it uses a consistent style mapping syntax. A style mapping starts with `@{` and ends with `}`. Each entry in the mapping is of the form `property_name: value`, and they must be comma-separated.
@@ -27,12 +30,6 @@ a = 3 @{
 }
 ```
 
-Style mappings can be applied to all item types. Every item type supports the `id: string` and `secret: boolean` properties, and most (statements, tables, images, text) support `pinned: boolean`. For more specific options, see each item type article:
+Style mappings can be applied to all item types. Every item type supports the `id: string` and `secret: boolean` properties, and most (statements, tables, images, text) support `pinned: boolean`. For more specific options, see each item type article.
 
-- [statements](./statements.md#style-mapping)
-- [folders](./folders.md#style-mapping)
-- [tables and columns](./tables.md#style-mapping)
-- [images](./images.md#style-mapping)
-- [text](./text.md#style-mapping)
-- [settings](./settings.md#style-mapping)
-- [tickers](./tickers.md#style-mapping)
+{{ collections.all | eleventyNavigation: "text-mode" | eleventyNavigationToHtml }}

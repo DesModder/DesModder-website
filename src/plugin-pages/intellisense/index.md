@@ -1,6 +1,9 @@
 ---
 title: Intellisense
-tags: ["plugins"]
+eleventyNavigation:
+  parent: DesModder
+  title: Intellisense
+  order: 1
 ---
 
 ## Documentation in Desmos

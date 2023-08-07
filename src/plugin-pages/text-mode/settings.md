@@ -1,5 +1,8 @@
 ---
 title: Settings
+eleventyNavigation:
+  parent: text-mode
+  key: Settings
 ---
 
 The settings item is where configuration happens for the whole graph.

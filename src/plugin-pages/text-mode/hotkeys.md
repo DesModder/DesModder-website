@@ -1,5 +1,8 @@
 ---
 title: Hotkeys
+eleventyNavigation:
+  parent: text-mode
+  key: Hotkeys
 ---
 
 ## Accessibility

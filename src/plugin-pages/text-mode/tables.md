@@ -1,5 +1,8 @@
 ---
 title: Tables
+eleventyNavigation:
+  parent: text-mode
+  key: Tables
 ---
 
 Tables are a structuring mechanism for lists. You can think of them as folders restricted to lists.

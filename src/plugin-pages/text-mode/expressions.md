@@ -1,5 +1,8 @@
 ---
 title: Math Expressions
+eleventyNavigation:
+  parent: text-mode
+  key: Math Expressions
 ---
 
 Expressions are the core of Desmos. Here's a broad overview of all the building blocks of math expressions, with more details later (not yet documented).

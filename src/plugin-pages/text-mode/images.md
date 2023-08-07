@@ -1,5 +1,8 @@
 ---
 title: Images
+eleventyNavigation:
+  parent: text-mode
+  key: Images
 ---
 
 An image just needs a name

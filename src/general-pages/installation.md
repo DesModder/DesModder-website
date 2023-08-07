@@ -1,5 +1,6 @@
 ---
 title: Installation
+tags: top
 ---
 
 ## Preferred: Install from Webstore

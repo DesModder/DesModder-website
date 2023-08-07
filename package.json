@@ -5,8 +5,7 @@
   "scripts": {
     "dev": "eleventy --serve",
     "build": "eleventy",
-    "clean": "rm -r public",
-    "format": "prettier --write ."
+    "clean": "rm -r public"
   },
   "repository": {
     "type": "git",
@@ -21,7 +20,6 @@
   },
   "homepage": "https://github.com/DesModder/DesModder-website#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "prettier": "^2.7.1"
+    "@11ty/eleventy": "^2.0.1"
   }
 }

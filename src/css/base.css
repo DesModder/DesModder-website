@@ -27,3 +27,25 @@ pre code {
   font-size: unset;
   white-space: unset;
 }
+
+/* Main layout */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: rgb(20 20 20 / 0.2);
+}
+
+header,
+header nav {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+main {
+  margin: 8px;
+}

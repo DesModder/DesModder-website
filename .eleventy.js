@@ -4,6 +4,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./img/favicon/*.{png,ico,webmanifest}": "/",
   });
+  eleventyConfig.addPassthroughCopy({
+    "./src/general-pages/installation/*.png": "/installation",
+  });
   return {
     dir: {
       input: "src",

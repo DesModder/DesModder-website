@@ -1,4 +1,5 @@
 {
   "layout": "post",
+  "date": "git Last Modified",
   "permalink": "{{ page.filePathStem | remove: '/plugin-pages' | remove: '/index' }}/"
 }

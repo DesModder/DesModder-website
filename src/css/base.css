@@ -28,12 +28,7 @@ pre code {
   white-space: unset;
 }
 
-/* Main layout */
-
-body {
-  margin: 0;
-  padding: 0;
-}
+/* Header layout */
 
 header {
   background: rgb(20 20 20 / 0.2);
@@ -46,6 +41,30 @@ header nav {
   align-items: center;
 }
 
+/* Main layout */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
 main {
-  margin: 8px;
+  padding-inline: 8px;
+}
+
+/* Footer layout */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  padding: 8px;
+  background: rgb(20 20 20 / 0.2);
 }

@@ -3,31 +3,25 @@
   "version": "0.1.0",
   "description": "Website for the DesModder browser extension",
   "scripts": {
-    "develop": "gatsby develop --https",
-    "start": "npm run develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "format": "prettier --write \"./**/*.{js,css,json,scss}\""
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "clean": "rm -r public",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DesModder/DesModder-website.git"
   },
   "keywords": [
-    "gatsby",
+    "desmos",
     "desmodder"
   ],
   "bugs": {
     "url": "https://github.com/DesModder/DesModder-website/issues"
   },
   "homepage": "https://github.com/DesModder/DesModder-website#readme",
-  "dependencies": {
-    "gatsby": "^4.18.0",
-    "gatsby-source-filesystem": "^4.18.0",
-    "react": "^18.2.0"
-  },
   "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
     "prettier": "^2.7.1"
   }
 }

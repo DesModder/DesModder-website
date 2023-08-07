@@ -10,7 +10,7 @@ The easiest way to get started with Text Mode (once you have DesModder installed
 - Switch to Text Mode using the <kbd>T</kbd> button at the top of the expressions list, to the right of the undo/redo buttons.
 - If you don't see the <kbd>T</kbd> button, make sure the Text Mode plugin is enabled in the DesModder plugins list
 
-For example, the graph at https://www.desmos.com/calculator/jioybtjgo7 becomes
+For example, the graph at [https://www.desmos.com/calculator/jioybtjgo7](https://www.desmos.com/calculator/jioybtjgo7) becomes
 
 ```js
 settings @{

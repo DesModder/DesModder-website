@@ -1,0 +1,4 @@
+{
+  "layout": "post",
+  "permalink": "{{ page.filePathStem | remove: '/plugin-pages' | remove: '/index' }}/"
+}

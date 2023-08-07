@@ -1,3 +1,29 @@
 body {
   font-family: sans-serif;
+  line-height: 1.25;
+}
+
+/* Inline code is <code>1+2</code>. Code blocks are <pre><code>1+2</code></pre> */
+pre,
+code,
+kbd {
+  padding: 0.2em 0.4em;
+  background: rgba(175, 184, 193, 0.2);
+  margin: 0;
+  font-size: 85%;
+  white-space: break-spaces;
+  width: max-content;
+}
+
+code {
+  border-radius: 6px;
+}
+
+pre code {
+  padding: unset;
+  background: unset;
+  border: unset;
+  margin: unset;
+  font-size: unset;
+  white-space: unset;
 }

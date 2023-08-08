@@ -10,9 +10,19 @@ kbd {
   padding: 0.2em 0.4em;
   background: rgba(175, 184, 193, 0.2);
   margin: 0;
-  font-size: 85%;
-  white-space: break-spaces;
   width: max-content;
+}
+
+code,
+kbd {
+  white-space: break-spaces;
+  font-size: 85%;
+}
+
+pre {
+  white-space: pre;
+  max-width: calc(100% - 8px);
+  overflow-x: auto;
 }
 
 code {

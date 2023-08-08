@@ -39,11 +39,7 @@ p = 3 @{ color: "#2d70b3", slider: @{ min: 0.1, max: 20, step: 0 } }
 
 If you want a more guided tutorial than playing around with converting graphs to Text Mode, here's some more pages, in no particular order:
 
-<ul>
-{% for post in collections['text-mode'] %}
-<li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-{% endfor %}
-</ul>
+{{ collections.all | eleventyNavigation: "text-mode" | eleventyNavigationToHtml }}
 
 ## Notable Bugs
 

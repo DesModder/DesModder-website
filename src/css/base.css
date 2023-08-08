@@ -3,6 +3,10 @@ body {
   line-height: 1.25;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /* Inline code is <code>1+2</code>. Code blocks are <pre><code>1+2</code></pre> */
 pre,
 code,
@@ -21,7 +25,7 @@ kbd {
 
 pre {
   white-space: pre;
-  width: calc(100% - 8px);
+  width: 100%;
   overflow-x: auto;
   padding: 8px;
 }
@@ -62,7 +66,7 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: auto minmax(auto, 850px) auto;
+  grid-template-columns: auto minmax(100%, 850px) auto;
 }
 
 article {

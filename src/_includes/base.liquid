@@ -27,7 +27,13 @@
       </nav>
     </header>
     <main>
-      {{ content }}
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          {{ collections.all | eleventyNavigationBreadcrumb: eleventyNavigation.key | eleventyNavigationToHtml }}
+        </nav>
+        <h1>{{ title }}</h1>
+        {{ content }}
+      </article>
     </main>
     <footer>
       Page created {{ page.date | date: "%Y-%m-%d" }}.

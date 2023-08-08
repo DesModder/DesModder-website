@@ -21,8 +21,9 @@ kbd {
 
 pre {
   white-space: pre;
-  max-width: calc(100% - 8px);
+  width: calc(100% - 8px);
   overflow-x: auto;
+  padding: 8px;
 }
 
 code {
@@ -60,6 +61,12 @@ body {
 }
 
 main {
+  display: grid;
+  grid-template-columns: auto minmax(auto, 850px) auto;
+}
+
+article {
+  grid-column: 2 / 3;
   padding-inline: 8px;
 }
 

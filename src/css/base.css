@@ -11,8 +11,10 @@ kbd {
   background: rgba(175, 184, 193, 0.2);
   margin: 0;
   font-size: 85%;
-  white-space: break-spaces;
+  white-space: pre;
   width: max-content;
+  max-width: calc(100% - 8px);
+  overflow-x: auto;
 }
 
 code {

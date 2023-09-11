@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Expressions</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li>
+<li><a href="/text-mode/">Text Mode</a></li></ul>
+        </nav>
+        <h1>Math Expressions</h1>
+        <p>Expressions are the core of Desmos. Here's a broad overview of all the building blocks of math expressions, with more details later (not yet documented).</p>
+<p>Notes to avoid confusion:</p>
+<ul>
+<li>Juxtaposed (implicit) multiplication like <code>ab</code> or <code>a b</code> is not allowed; it must be <code>a*b</code>.</li>
+<li>Equality is currently single-equals like <code>a = b</code>, unlike some other programming languages</li>
+<li>In a derivative, the <code>d/d</code> must have no spaces, and there must be a space after it, e.g. <code>(d/d x)</code></li>
+<li>Decimal values must not have a trailing decimal point. Write <code>123</code>, not <code>123.</code></li>
+</ul>
+<pre><code class="language-js">// Constants
+// Leading 0 cannot be omitted before a decimal point; not OK: .12345
+1; 1.5; 300; 0.12345; -4.5
+// Addition, subtraction, division, multiplication, exponentiation
+a + b; a - b; a / b; a * b; a ^ b
+// Negative, Factorial
+-a; a!
+// Equals, less, less or equal, greater or equal, greater
+a = b; a &lt; b; a &lt;= b; a &gt;= b; a &gt; b
+// Double inequalities work too
+// The comparisons must be in the same direction
+a &lt; b &lt; c; a &gt; b &gt; c
+// Function call
+f(x); g(a,b,c)
+// Identifier (multi-character are allowed)
+f; quack42; total
+// Integral; sum; product
+integral x=(0 ... 5) x^2
+sum n=(1...5) n
+product n=(1...5) n
+// Derivative
+(d/d x) f(x,y)
+// Prime (only one argument allowed)
+f''(x); func''''(arg)
+// List
+[1, x, sin(x), x^2]
+// Range
+[1...x]
+[1,2,3...11,12]
+// List access
+L[1...5]
+L[M+1]
+// List filters
+L[L&gt;3]
+// Dot access
+L.random(5)
+// Ordered pair access
+(a,b).x; (a,b).y
+// Update rules, sequence
+a -&gt; a+1, b -&gt; b+1
+// List comprehension
+[a for a=[1...5]]
+[a + b + c for a=[1...5], b=[1...4], c=[1,2,3]]
+// Piecewise
+{a &gt; 5}
+{a &gt; 5: 7}
+{a &gt; 5: 7, 0}
+{a &gt; 5: 7, b &gt; 3: 4}
+</code></pre>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2023-09-11.
+    </footer>
+  </body>
+</html>

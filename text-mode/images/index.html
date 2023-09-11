@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Images</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li>
+<li><a href="/text-mode/">Text Mode</a></li></ul>
+        </nav>
+        <h1>Images</h1>
+        <p>An image just needs a name</p>
+<pre><code class="language-js">image &quot;name&quot;
+</code></pre>
+<p>This defaults to a 10×10 black square centered at the origin.</p>
+<p>The real action happens in the style mapping</p>
+<p>Expanding the &quot;image&quot; macro gives this full default, clearly written out</p>
+<pre><code class="language-js">image &quot;Black Pixel&quot; @{
+  url: &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjYGBg+A8AAQQBAHAgZQsAAAAASUVORK5CYII=&quot;,
+  width: 10,
+  height: 10,
+  center: (0, 0),
+}
+</code></pre>
+<p>You can change the image by clicking the inline image preview (which defaults to a black square).</p>
+<h2>Style Mapping</h2>
+<pre><code class="language-js">image &quot;Black Pixel&quot; @{
+  url: &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjYGBg+A8AAQQBAHAgZQsAAAAASUVORK5CYII=&quot;,
+  width: 10,
+  height: 10,
+  center: (0, 0),
+  angle: 0,
+  opacity: 0.7,
+  foreground: true,
+  draggable: false,
+  onClick: a -&gt; a + 1,
+  clickDescription: &quot;Increment a&quot;,
+  hoveredImage: &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdj0C+68x8ABM4CfceOo7cAAAAASUVORK5CYII=&quot;,
+  depressedImage: &quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjsOhx+w8ABBQCCpNFiqIAAAAASUVORK5CYII=&quot;,
+}
+a = 0
+</code></pre>
+<p>The <code>clickDescription</code> is an accessibility feature for users who rely on screen readers.</p>
+<p>The <code>hoveredImage</code> and <code>depressedImage</code> are of the same format as <code>url</code>, but they only change the image when <code>onClick</code> is an expression without errors.</p>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2023-09-11.
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Mode</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li></ul>
+        </nav>
+        <h1>Text Mode</h1>
+        <p>Text Mode is a way to edit Desmos graphs using plaintext (code) instead of the vanilla approach which uses MathQuill (fancy math formatting) and UI menus.</p>
+<p>The easiest way to get started with Text Mode (once you have DesModder installed) is by switching to text mode on an existing graph.</p>
+<ul>
+<li>Switch to Text Mode using the <kbd>T</kbd> button at the top of the expressions list, to the right of the undo/redo buttons.</li>
+<li>If you don't see the <kbd>T</kbd> button, make sure the Text Mode plugin is enabled in the DesModder plugins list</li>
+</ul>
+<p>For example, the graph at <a href="https://www.desmos.com/calculator/jioybtjgo7">https://www.desmos.com/calculator/jioybtjgo7</a> becomes</p>
+<pre><code class="language-js">settings @{
+  randomSeed: &quot;ba9f5c1341fffbc57ac9c50540018465&quot;,
+  viewport: @{ xmin: -10, xmax: 10, ymin: -10, ymax: 10 },
+}
+
+y = (1 / (4 * p)) * x ^ 2 @{
+  color: &quot;#c74440&quot;,
+  lines: @{ opacity: 0.9, width: 2.5, style: &quot;SOLID&quot; },
+}
+
+p = 3 @{ color: &quot;#2d70b3&quot;, slider: @{ min: 0.1, max: 20, step: 0 } }
+
+(0, p) @{
+  color: &quot;#c74440&quot;,
+  points: @{ opacity: 0.9, size: 9, style: &quot;POINT&quot;, drag: &quot;AUTO&quot; },
+}
+</code></pre>
+<h2>Learn the Language</h2>
+<p>If you want a more guided tutorial than playing around with converting graphs to Text Mode, here's some more pages, in no particular order:</p>
+<ul><li><a href="/text-mode/expressions/">Math Expressions</a></li>
+<li><a href="/text-mode/folders/">Folders</a></li>
+<li><a href="/text-mode/hotkeys/">Hotkeys</a></li>
+<li><a href="/text-mode/images/">Images</a></li>
+<li><a href="/text-mode/settings/">Settings</a></li>
+<li><a href="/text-mode/statements/">Statement</a></li>
+<li><a href="/text-mode/style-mappings/">Style Mappings</a></li>
+<li><a href="/text-mode/tables/">Tables</a></li>
+<li><a href="/text-mode/text/">Text</a></li>
+<li><a href="/text-mode/tickers/">Tickers</a></li></ul>
+<h2>Notable Bugs</h2>
+<ul>
+<li>The existing undo and redo buttons do not edit text code
+<ul>
+<li>for now, avoid using the undo and redo buttons or corresponding hotkey</li>
+</ul>
+</li>
+<li>An object with 0 fill opacity gets set to have fill disabled
+<ul>
+<li>if you want an invisible button, set opacity to a small number like 0.0000001</li>
+</ul>
+</li>
+</ul>
+<h2>Text Mode Pros and Cons</h2>
+<p>Pros:</p>
+<ul>
+<li>line wrapping</li>
+<li>easy copy-paste</li>
+<li>easy multi-character names</li>
+<li>(WIP) more features, such as nested folders, local scoping, and structs</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>less intuitive notation (e.g. no fractions, just inline division)</li>
+<li>options are not clearly laid out by a UI</li>
+<li>variety of bugs (WIP fixes)</li>
+<li>worse performance while editing (WIP performance improvements)</li>
+</ul>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2023-09-11.
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tables</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li>
+<li><a href="/text-mode/">Text Mode</a></li></ul>
+        </nav>
+        <h1>Tables</h1>
+        <p>Tables are a structuring mechanism for lists. You can think of them as folders restricted to lists.</p>
+<p>The first list is implicitly treated as X values, with all other lists as Y values in their own expressions.</p>
+<p>For example, consider the following table:</p>
+<pre><code class="language-js">L = [12, 13, 14]
+table {
+  x1 = [1, 2, 3]
+  y1 = [4, 5, 6]
+  [7, 8, 9]
+  [10, 11, NaN]
+  L
+}
+</code></pre>
+<p>It is effectively equivalent to a folder</p>
+<pre><code class="language-js">L = [12, 13, 14]
+folder &quot;title&quot; {
+  x1 = [1, 2, 3]
+  y1 = [4, 5, 6]
+  (x1, y1)
+  (x1, [7, 8, 9])
+  (x1, [10, 11])
+  (x1, L)
+}
+</code></pre>
+<p>(Note that the trailing <code>NaN</code> got removed))</p>
+<p>Tables are not too useful in Text Mode because of this equivalence. They are kept mostly for compatibility with vanilla Desmos.</p>
+<p>However, tables have one property that is impossible to repeat elsewhere: lists of draggable poitns can be obtained with the following code:</p>
+<pre><code class="language-js">table {
+  X = [1, 2, 3]
+  Y = [4, 5, 6] @{
+    points: @{ drag: &quot;XY&quot; },
+  }
+}
+</code></pre>
+<h2>Style Mapping</h2>
+<p>The entire table can have a style mapping, which just supports the standard <code>pinned</code>, <code>secret</code>, and <code>id</code>.</p>
+<p>The style mappings for columns after the first are more detailed</p>
+<pre><code class="language-js">table {
+  X = [1, 2, 3]
+  Y = [4, 5, 6] @{
+    color: BLUE,
+    hidden: false,
+    points: @{
+      opacity: 0.5,
+      size: 20,
+      style: &quot;CROSS&quot;,
+      drag: &quot;NONE&quot;
+    },
+    lines: @{
+      opacity: 0.4,
+      width: 10,
+      style: &quot;SOLID&quot;
+    }
+  }
+}
+</code></pre>
+<p>Valid line styles are <code>&quot;SOLID&quot;</code> (default), <code>&quot;DASHED&quot;</code>, and <code>&quot;DOTTED&quot;</code></p>
+<p>Valid point styles are <code>&quot;POINT&quot;</code> (default), <code>&quot;OPEN&quot;</code>, and <code>&quot;CROSS&quot;</code></p>
+<p>Valid drag styles are <code>&quot;AUTO&quot;</code> (default), <code>&quot;NONE&quot;</code>, <code>&quot;X&quot;</code>, <code>&quot;Y&quot;</code>, and <code>&quot;XY&quot;</code></p>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2023-09-11.
+    </footer>
+  </body>
+</html>

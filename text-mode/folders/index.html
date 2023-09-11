@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Folders</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li>
+<li><a href="/text-mode/">Text Mode</a></li></ul>
+        </nav>
+        <h1>Folders</h1>
+        <p>Folders are a structuring mechanism. Each folder must have a title specified as a string, and they may contain any statement except for another folder (nested folders are not yet supported)</p>
+<pre><code class="language-js">folder &quot;Basic trig functions!&quot; {
+  y = sin(x)
+  y = cos(x)
+  y = tan(x)
+}
+</code></pre>
+<h2>Style Mapping</h2>
+<pre><code class="language-js">folder &quot;title&quot; {
+  a = 3
+  y = a * x
+} @{
+  hidden: true,
+  collapsed: true
+}
+</code></pre>
+<p>Collapsed doesn't make sense in the context of text mode because they don't actually collapse the text representation of the folder (folders can be collapsed using the text editor, just like tables, style mappings, and similar constructs)</p>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2023-09-11.
+    </footer>
+  </body>
+</html>

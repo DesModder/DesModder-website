@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li>
+<li><a href="/text-mode/">Text Mode</a></li></ul>
+        </nav>
+        <h1>Settings</h1>
+        <p>The settings item is where configuration happens for the whole graph.</p>
+<p>The simplest settings has no options, but the runtime will typically fill in the viewport and random seed.</p>
+<pre><code class="language-js">settings @{}
+</code></pre>
+<pre><code class="language-js">settings @{
+  randomSeed: &quot;fd0690aa6e28de4c9fad0830a5bff5d7&quot;,
+  viewport: @{ xmin: -10, xmax: 10, ymin: -10, ymax: 10 },
+}
+</code></pre>
+<p>Most of the time, you don't need to edit the settings style mapping yourself. Panning and zooming will update it, as will manipulating any settings in the UI settings menu (wrench, top right).</p>
+<h2>Style Mapping</h2>
+<p>Here's a full list of available options by example.</p>
+<pre><code class="language-js">settings @{
+  viewport: @{
+    xmin: -10,
+    ymin: -10,
+    xmax: 10,
+    ymax: 10,
+  },
+  squareAxes: true,
+  randomSeed: &quot;abc&quot;,
+  xAxisLabel: &quot;x&quot;,
+  yAxisLabel: &quot;y&quot;,
+  xAxisArrowMode: &quot;BOTH&quot;,
+  yAxisArrowMode: &quot;BOTH&quot;,
+  xAxisMinorSubdivisions: 2,
+  yAxisMinorSubdivisions: 2,
+  xAxisStep: 6.283185307179586,
+  yAxisStep: 3,
+  degreeMode: false,
+  showGrid: true,
+  showXAxis: true,
+  showYAxis: true,
+  xAxisNumbers: true,
+  yAxisNumbers: true,
+  polarMode: false,
+  polarNumbers: false,
+  restrictGridToFirstQuadrant: true,
+  lockViewport: true,
+}
+</code></pre>
+<p><code>xAxisArrowMode</code> and <code>yAxisArrowMode</code> can be <code>&quot;NONE&quot;</code>, <code>&quot;POSITIVE&quot;</code>, or <code>&quot;BOTH&quot;</code></p>
+<p><code>xAxisMinorSubdivisions</code> and <code>yAxisMinorSubdivisions</code> should be a positive integer</p>
+<ul>
+<li>x means x - 1 minor grid lines per major grid line</li>
+<li>In particular, 1 means no minor grid lines</li>
+</ul>
+<p>Letting <code>xAxisStep</code> or <code>yAxisStep</code> be a small fractional multiple of pi (such as <code>pi/2</code> or <code>2*pi</code>) will write the steps in terms of pi.</p>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2023-09-11.
+    </footer>
+  </body>
+</html>

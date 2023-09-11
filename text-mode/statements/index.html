@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statement</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li>
+<li><a href="/text-mode/">Text Mode</a></li></ul>
+        </nav>
+        <h1>Statement</h1>
+        <p>Statements are the core of graphs. They are all based around some math expression, with an optional style mapping and (for regressions) a regression value mapping.</p>
+<p>The style mapping options below are listed divided by type of statement because many options are useless for other types. However, this is not currently enforced; unused options are often ignored without a warning.</p>
+<p>As a reminder, press Ctrl+Space while inside a style mapping to preview some available options.</p>
+<h2>Comparison (Equation or Inequality)</h2>
+<pre><code class="language-js">// Equation
+y = 2 * x + 5
+sin(x) = sin(y)
+
+// Inequality
+y &lt; 2 * x + 5
+sin(x) * sin(y) &gt;= 0
+</code></pre>
+<h2>Slider</h2>
+<pre><code class="language-js">a = 5;
+</code></pre>
+<h2>Function Definition</h2>
+<pre><code>f(x) = x + 1
+f(a,b,c) = a + 2 * b + c
+</code></pre>
+<p>No styles are supported besides the default <code>id</code>, <code>pinned</code>, and <code>errorHidden</code></p>
+<h2>Visualizations</h2>
+<pre><code>stats(L)
+histogram(L)
+boxplot(L)
+dotplot(L)
+independentTTest(L,M)
+TTest(L)
+</code></pre>
+<p>TODO vizProps styles</p>
+<h2>Regression</h2>
+<pre><code class="language-js">a + 1 ~ sin(a)
+residuals = y1 ~ a * x1 + b
+y1 ~ a * x1 + b # {
+  a = 2.3
+  b = 4.7
+}
+</code></pre>
+<h2>Constant calculations</h2>
+<pre><code class="language-js">1 + 7/2 @{ displayEvaluationAsFraction: true }
+</code></pre>
+<h2>Style Mapping</h2>
+<h3>Lines, Points, and Fill</h3>
+<pre><code class="language-js">y &lt; 2 * x + 5 @{
+  color: BLUE,
+  // fill opacity
+  fill: 0.5,
+  lines: @{
+    opacity: 0.5,
+    width: 20,
+    style: &quot;DASHED&quot;
+  }
+}
+</code></pre>
+<pre><code class="language-js">(2, 3) @{
+  color: &quot;#c74440&quot;,
+  points: @{
+    opacity: 0.9,
+    size: 9,
+    style: &quot;POINT&quot;,
+    drag: &quot;XY&quot;
+  },
+}
+</code></pre>
+<p>Valid line styles are <code>&quot;SOLID&quot;</code> (default), <code>&quot;DASHED&quot;</code>, and <code>&quot;DOTTED&quot;</code></p>
+<p>Valid point styles are <code>&quot;POINT&quot;</code> (default), <code>&quot;OPEN&quot;</code>, and <code>&quot;CROSS&quot;</code></p>
+<p>Valid drag styles are <code>&quot;AUTO&quot;</code> (default), <code>&quot;NONE&quot;</code>, <code>&quot;X&quot;</code>, <code>&quot;Y&quot;</code>, and <code>&quot;XY&quot;</code></p>
+<h3>Slider styles</h3>
+<pre><code class="language-js">a = 5 @{
+  slider: @{
+    playing: true,
+    reversed: true,
+    loopMode: &quot;LOOP_FORWARD_REVERSE&quot;,
+    // period is specified in milliseconds
+    period: 8000,
+    min: 0,
+    max: 20,
+    step: 1
+  }
+}
+</code></pre>
+<h3>Regression styles</h3>
+<pre><code>y1 ~ a * b ^ x1 @{ logMode: true }
+</code></pre>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2023-09-11.
+    </footer>
+  </body>
+</html>

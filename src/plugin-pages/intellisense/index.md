@@ -43,3 +43,11 @@ Autocomplete can be controlled via mouse or keyboard.
 - `Up` and `Down` arrows: Navigate through the autocomplete menu.
 - `Enter`: Apply the selected autocomplete option.
 - `Escape`: Disable the autocomplete menu until the next edit.
+
+## Auto-Subscriptify
+
+If this feature is enabled, then subscripts can be automatically inserted in some scenarios.
+
+For example, if you have a function defined as `g_{ray}(x)=rgb(x,x,x)`, then you can directly write <kbd>g</kbd><kbd>r</kbd><kbd>a</kbd><kbd>y</kbd> to get `g_{ray}` without typing the underscore key <kbd>_</kbd>.
+
+![](/img/auto_subscript_gray.png)

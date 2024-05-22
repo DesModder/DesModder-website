@@ -16,11 +16,11 @@ DesModder Intellisense supports documentation for functions. Function documentat
 
 Put a text expression (either through the expression dropdown or by hitting the `"` key in an empty expression) directly before a function and put text in it to provide documentation for that function.
 
-Function documentation can also contain rendered LaTeX mathematical expressions, which are enclosed by backticks (`\``). These use [Text Mode](../../text-mode/docs/intro.md) syntax. If an expression cannot be parsed as a Text Mode expression, it will fall back to being parsed as regular Desmos LaTeX.
+Function documentation can also contain rendered LaTeX mathematical expressions, which are enclosed by backticks (`\``). These use [Text Mode](../text-mode/) syntax. If an expression cannot be parsed as a Text Mode expression, it will fall back to being parsed as regular Desmos LaTeX.
 
 ### Parameter Documentation
 
-You can provide documentation for specific function parameters by typing `@param PARAMNAME`, where `PARAMNAME` is the name of the function parameter as if it were written in [Text Mode](../../text-mode/docs/intro.md) format.
+You can provide documentation for specific function parameters by typing `@param PARAMNAME`, where `PARAMNAME` is the name of the function parameter as if it were written in [Text Mode](../text-mode/) format.
 
 ### Private and Public Expressions
 

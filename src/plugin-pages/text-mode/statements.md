@@ -31,7 +31,7 @@ a = 5;
 
 ## Function Definition
 
-```
+```js
 f(x) = x + 1
 f(a,b,c) = a + 2 * b + c
 ```
@@ -40,7 +40,7 @@ No styles are supported besides the default `id`, `pinned`, and `errorHidden`
 
 ## Visualizations
 
-```
+```js
 stats(L)
 histogram(L)
 boxplot(L)
@@ -122,6 +122,6 @@ a = 5 @{
 
 ### Regression styles
 
-```
+```js
 y1 ~ a * b ^ x1 @{ logMode: true }
 ```

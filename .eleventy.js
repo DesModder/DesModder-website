@@ -1,4 +1,5 @@
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const syntaxHighlightPlugin = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./src/**");
@@ -11,6 +12,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({
     "./src/general-pages/installation/*.png": "/installation",
   });
+  // do not place syntaxHighlightPlugin after eleventyNavigationPlugin
+  // it prevents styles from loading
+  eleventyConfig.addPlugin(syntaxHighlightPlugin);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
   return {
     dir: {

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Images</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li>
+<li><a href="/text-mode/">Text Mode</a></li></ul>
+        </nav>
+        <h1>Images</h1>
+        <p>An image just needs a name</p>
+<pre class="language-js"><code class="language-js">image <span class="token string">"name"</span></code></pre>
+<p>This defaults to a 10×10 black square centered at the origin.</p>
+<p>The real action happens in the style mapping</p>
+<p>Expanding the &quot;image&quot; macro gives this full default, clearly written out</p>
+<pre class="language-js"><code class="language-js">image <span class="token string">"Black Pixel"</span> @<span class="token punctuation">{</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjYGBg+A8AAQQBAHAgZQsAAAAASUVORK5CYII="</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">center</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></code></pre>
+<p>You can change the image by clicking the inline image preview (which defaults to a black square).</p>
+<h2>Style Mapping</h2>
+<pre class="language-js"><code class="language-js">image <span class="token string">"Black Pixel"</span> @<span class="token punctuation">{</span>
+  <span class="token literal-property property">url</span><span class="token operator">:</span> <span class="token string">"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjYGBg+A8AAQQBAHAgZQsAAAAASUVORK5CYII="</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">center</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">angle</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">opacity</span><span class="token operator">:</span> <span class="token number">0.7</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">foreground</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">draggable</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">onClick</span><span class="token operator">:</span> a <span class="token operator">-</span><span class="token operator">></span> a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">clickDescription</span><span class="token operator">:</span> <span class="token string">"Increment a"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">hoveredImage</span><span class="token operator">:</span> <span class="token string">"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdj0C+68x8ABM4CfceOo7cAAAAASUVORK5CYII="</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">depressedImage</span><span class="token operator">:</span> <span class="token string">"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdjsOhx+w8ABBQCCpNFiqIAAAAASUVORK5CYII="</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+a <span class="token operator">=</span> <span class="token number">0</span></code></pre>
+<p>The <code>clickDescription</code> is an accessibility feature for users who rely on screen readers.</p>
+<p>The <code>hoveredImage</code> and <code>depressedImage</code> are of the same format as <code>url</code>, but they only change the image when <code>onClick</code> is an expression without errors.</p>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2024-06-24.
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li>
+<li><a href="/text-mode/">Text Mode</a></li></ul>
+        </nav>
+        <h1>Settings</h1>
+        <p>The settings item is where configuration happens for the whole graph.</p>
+<p>The simplest settings has no options, but the runtime will typically fill in the viewport and random seed.</p>
+<pre class="language-js"><code class="language-js">settings @<span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
+<pre class="language-js"><code class="language-js">settings @<span class="token punctuation">{</span>
+  <span class="token literal-property property">randomSeed</span><span class="token operator">:</span> <span class="token string">"fd0690aa6e28de4c9fad0830a5bff5d7"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">viewport</span><span class="token operator">:</span> @<span class="token punctuation">{</span> <span class="token literal-property property">xmin</span><span class="token operator">:</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token literal-property property">xmax</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span> <span class="token literal-property property">ymin</span><span class="token operator">:</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token literal-property property">ymax</span><span class="token operator">:</span> <span class="token number">10</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Most of the time, you don't need to edit the settings style mapping yourself. Panning and zooming will update it, as will manipulating any settings in the UI settings menu (wrench, top right).</p>
+<h2>Style Mapping</h2>
+<p>Here's a full list of available options by example.</p>
+<pre class="language-js"><code class="language-js">settings @<span class="token punctuation">{</span>
+  <span class="token literal-property property">viewport</span><span class="token operator">:</span> @<span class="token punctuation">{</span>
+    <span class="token literal-property property">xmin</span><span class="token operator">:</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">ymin</span><span class="token operator">:</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">xmax</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">ymax</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">squareAxes</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">randomSeed</span><span class="token operator">:</span> <span class="token string">"abc"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">xAxisLabel</span><span class="token operator">:</span> <span class="token string">"x"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">yAxisLabel</span><span class="token operator">:</span> <span class="token string">"y"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">xAxisArrowMode</span><span class="token operator">:</span> <span class="token string">"BOTH"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">yAxisArrowMode</span><span class="token operator">:</span> <span class="token string">"BOTH"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">xAxisMinorSubdivisions</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">yAxisMinorSubdivisions</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">xAxisStep</span><span class="token operator">:</span> <span class="token number">6.283185307179586</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">yAxisStep</span><span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">degreeMode</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">showGrid</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">showXAxis</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">showYAxis</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">xAxisNumbers</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">yAxisNumbers</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">polarMode</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">polarNumbers</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">restrictGridToFirstQuadrant</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">lockViewport</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></code></pre>
+<p><code>xAxisArrowMode</code> and <code>yAxisArrowMode</code> can be <code>&quot;NONE&quot;</code>, <code>&quot;POSITIVE&quot;</code>, or <code>&quot;BOTH&quot;</code></p>
+<p><code>xAxisMinorSubdivisions</code> and <code>yAxisMinorSubdivisions</code> should be a positive integer</p>
+<ul>
+<li>x means x - 1 minor grid lines per major grid line</li>
+<li>In particular, 1 means no minor grid lines</li>
+</ul>
+<p>Letting <code>xAxisStep</code> or <code>yAxisStep</code> be a small fractional multiple of pi (such as <code>pi/2</code> or <code>2*pi</code>) will write the steps in terms of pi.</p>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2024-06-24.
+    </footer>
+  </body>
+</html>

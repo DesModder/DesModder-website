@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Expressions</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li>
+<li><a href="/text-mode/">Text Mode</a></li></ul>
+        </nav>
+        <h1>Math Expressions</h1>
+        <p>Expressions are the core of Desmos. Here's a broad overview of all the building blocks of math expressions, with more details later (not yet documented).</p>
+<p>Notes to avoid confusion:</p>
+<ul>
+<li>Juxtaposed (implicit) multiplication like <code>ab</code> or <code>a b</code> is not allowed; it must be <code>a*b</code>.</li>
+<li>Equality is currently single-equals like <code>a = b</code>, unlike some other programming languages</li>
+<li>In a derivative, the <code>d/d</code> must have no spaces, and there must be a space after it, e.g. <code>(d/d x)</code></li>
+<li>Decimal values must not have a trailing decimal point. Write <code>123</code>, not <code>123.</code></li>
+</ul>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Constants</span>
+<span class="token comment">// Leading 0 cannot be omitted before a decimal point; not OK: .12345</span>
+<span class="token number">1</span><span class="token punctuation">;</span> <span class="token number">1.5</span><span class="token punctuation">;</span> <span class="token number">300</span><span class="token punctuation">;</span> <span class="token number">0.12345</span><span class="token punctuation">;</span> <span class="token operator">-</span><span class="token number">4.5</span>
+<span class="token comment">// Addition, subtraction, division, multiplication, exponentiation</span>
+a <span class="token operator">+</span> b<span class="token punctuation">;</span> a <span class="token operator">-</span> b<span class="token punctuation">;</span> a <span class="token operator">/</span> b<span class="token punctuation">;</span> a <span class="token operator">*</span> b<span class="token punctuation">;</span> a <span class="token operator">^</span> b
+<span class="token comment">// Negative, Factorial</span>
+<span class="token operator">-</span>a<span class="token punctuation">;</span> a<span class="token operator">!</span>
+<span class="token comment">// Equals, less, less or equal, greater or equal, greater</span>
+a <span class="token operator">=</span> b<span class="token punctuation">;</span> a <span class="token operator">&lt;</span> b<span class="token punctuation">;</span> a <span class="token operator">&lt;=</span> b<span class="token punctuation">;</span> a <span class="token operator">>=</span> b<span class="token punctuation">;</span> a <span class="token operator">></span> b
+<span class="token comment">// Double inequalities work too</span>
+<span class="token comment">// The comparisons must be in the same direction</span>
+a <span class="token operator">&lt;</span> b <span class="token operator">&lt;</span> c<span class="token punctuation">;</span> a <span class="token operator">></span> b <span class="token operator">></span> c
+<span class="token comment">// Function call</span>
+<span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token function">g</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">)</span>
+<span class="token comment">// Identifier (multi-character are allowed)</span>
+f<span class="token punctuation">;</span> quack42<span class="token punctuation">;</span> total
+<span class="token comment">// Integral; sum; product</span>
+integral x<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">0</span> <span class="token operator">...</span> <span class="token number">5</span><span class="token punctuation">)</span> x<span class="token operator">^</span><span class="token number">2</span>
+sum n<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1.</span><span class="token punctuation">.</span><span class="token number">.5</span><span class="token punctuation">)</span> n
+product n<span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1.</span><span class="token punctuation">.</span><span class="token number">.5</span><span class="token punctuation">)</span> n
+<span class="token comment">// Derivative</span>
+<span class="token punctuation">(</span>d<span class="token operator">/</span>d x<span class="token punctuation">)</span> <span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span>y<span class="token punctuation">)</span>
+<span class="token comment">// Prime (only one argument allowed)</span>
+f<span class="token string">''</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span> func<span class="token string">''</span><span class="token string">''</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span>
+<span class="token comment">// List</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> x<span class="token punctuation">,</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">,</span> x<span class="token operator">^</span><span class="token number">2</span><span class="token punctuation">]</span>
+<span class="token comment">// Range</span>
+<span class="token punctuation">[</span><span class="token number">1.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>x<span class="token punctuation">]</span>
+<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3.</span><span class="token punctuation">.</span><span class="token number">.11</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">]</span>
+<span class="token comment">// List access</span>
+<span class="token constant">L</span><span class="token punctuation">[</span><span class="token number">1.</span><span class="token punctuation">.</span><span class="token number">.5</span><span class="token punctuation">]</span>
+<span class="token constant">L</span><span class="token punctuation">[</span><span class="token constant">M</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token comment">// List filters</span>
+<span class="token constant">L</span><span class="token punctuation">[</span><span class="token constant">L</span><span class="token operator">></span><span class="token number">3</span><span class="token punctuation">]</span>
+<span class="token comment">// Dot access</span>
+<span class="token constant">L</span><span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+<span class="token comment">// Ordered pair access</span>
+<span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">.</span>x<span class="token punctuation">;</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">)</span><span class="token punctuation">.</span>y
+<span class="token comment">// Update rules, sequence</span>
+a <span class="token operator">-</span><span class="token operator">></span> a<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> b <span class="token operator">-</span><span class="token operator">></span> b<span class="token operator">+</span><span class="token number">1</span>
+<span class="token comment">// List comprehension</span>
+<span class="token punctuation">[</span>a <span class="token keyword">for</span> a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1.</span><span class="token punctuation">.</span><span class="token number">.5</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token punctuation">[</span>a <span class="token operator">+</span> b <span class="token operator">+</span> c <span class="token keyword">for</span> a<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1.</span><span class="token punctuation">.</span><span class="token number">.5</span><span class="token punctuation">]</span><span class="token punctuation">,</span> b<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1.</span><span class="token punctuation">.</span><span class="token number">.4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> c<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+<span class="token comment">// Piecewise</span>
+<span class="token punctuation">{</span>a <span class="token operator">></span> <span class="token number">5</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span>a <span class="token operator">></span> <span class="token number">5</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span>a <span class="token operator">></span> <span class="token number">5</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">}</span>
+<span class="token punctuation">{</span>a <span class="token operator">></span> <span class="token number">5</span><span class="token operator">:</span> <span class="token number">7</span><span class="token punctuation">,</span> b <span class="token operator">></span> <span class="token number">3</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">}</span></code></pre>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2024-06-24.
+    </footer>
+  </body>
+</html>

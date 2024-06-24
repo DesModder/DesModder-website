@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intellisense</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          
+        </nav>
+        <h1>Intellisense</h1>
+        <h2>Documentation in Desmos</h2>
+<h3>Function Documentation</h3>
+<p><a href="https://www.desmos.com/calculator/3hkfwd6cqw">See an example here.</a></p>
+<p>DesModder Intellisense supports documentation for functions. Function documentation will appear while you are filling out the parameters for a function.</p>
+<p>Put a text expression (either through the expression dropdown or by hitting the <code>&quot;</code> key in an empty expression) directly before a function and put text in it to provide documentation for that function.</p>
+<p>Function documentation can also contain rendered LaTeX mathematical expressions, which are enclosed by backticks (```). These use <a href="../text-mode/">Text Mode</a> syntax. If an expression cannot be parsed as a Text Mode expression, it will fall back to being parsed as regular Desmos LaTeX.</p>
+<h3>Parameter Documentation</h3>
+<p>You can provide documentation for specific function parameters by typing <code>@param PARAMNAME</code>, where <code>PARAMNAME</code> is the name of the function parameter as if it were written in <a href="../text-mode/">Text Mode</a> format.</p>
+<h3>Private and Public Expressions</h3>
+<ul>
+<li>
+<p><strong>Public expressions</strong> are displayed in the intellisense menu.</p>
+</li>
+<li>
+<p><strong>Private expressions</strong> are <em>not</em> displayed in the intellisense menu.</p>
+</li>
+<li>
+<p><code>@private</code>: All expressions are public by default. You can put <code>@private</code> in a text expression above an expression to make it a private expression. You can also use <code>@private</code> in the text for a folder to make every expression in that folder private. However, when making edits within the same folder, you will still see its contents in the intellisense menu. Think of it like a scoping system, with the folder as a scope.</p>
+</li>
+<li>
+<p><code>@public</code>: Inside a folder marked as <code>@private</code>, you can make an expression public by placing a text expression immediately before it containing the string <code>@public</code>.</p>
+</li>
+</ul>
+<h2>Jump to Definition</h2>
+<p>Press <code>F9</code> while the text cursor (caret) is hovering over an identifier to jump to that identifier's definition. Alternatively, while the intellisense menu is open, you can click the compass button while hovering over an autocomplete suggestion to jump to its definition.</p>
+<p>If there are multiple definitions, a menu listing them will open instead. Use the <code>Up</code> and <code>Down</code> arrow keys to navigate through this menu; and use <code>Enter</code> to select an option from it. Use <code>Escape</code> to close it.</p>
+<h2>Autocomplete</h2>
+<p>Autocomplete can be controlled via mouse or keyboard.</p>
+<ul>
+<li><code>Up</code> and <code>Down</code> arrows: Navigate through the autocomplete menu.</li>
+<li><code>Enter</code>: Apply the selected autocomplete option.</li>
+<li><code>Escape</code>: Disable the autocomplete menu until the next edit.</li>
+</ul>
+<h2>Auto-Subscriptify</h2>
+<p>If this feature is enabled, then subscripts can be automatically inserted in some scenarios.</p>
+<p>For example, if you have a function defined as <code>g_{ray}(x)=rgb(x,x,x)</code>, then you can directly write <kbd>g</kbd><kbd>r</kbd><kbd>a</kbd><kbd>y</kbd> to get <code>g_{ray}</code> without typing the underscore key <kbd>_</kbd>.</p>
+<p><img src="/img/auto_subscript_gray.png" alt=""></p>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2024-06-24.
+    </footer>
+  </body>
+</html>

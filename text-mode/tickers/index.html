@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tickers</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li>
+<li><a href="/text-mode/">Text Mode</a></li></ul>
+        </nav>
+        <h1>Tickers</h1>
+        <p>The basic syntax of a ticker is just <code>ticker</code> followed by an expression.</p>
+<pre class="language-js"><code class="language-js">ticker a <span class="token operator">-</span><span class="token operator">></span> a <span class="token operator">+</span> <span class="token number">1</span>
+a <span class="token operator">=</span> <span class="token number">0</span></code></pre>
+<p>Tickers can use actions defined elsewhere</p>
+<pre class="language-js"><code class="language-js">ticker mainAction
+mainAction <span class="token operator">=</span> a <span class="token operator">-</span><span class="token operator">></span> a <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> b <span class="token operator">-</span><span class="token operator">></span> b <span class="token operator">*</span> <span class="token number">2</span>
+a <span class="token operator">=</span> <span class="token number">0</span>
+b <span class="token operator">=</span> <span class="token number">1</span></code></pre>
+<h2>Style Mapping</h2>
+<pre class="language-js"><code class="language-js">ticker a <span class="token operator">-</span><span class="token operator">></span> a <span class="token operator">+</span> <span class="token number">1</span> @<span class="token punctuation">{</span>
+  <span class="token literal-property property">minStep</span><span class="token operator">:</span> <span class="token number">2000</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">playing</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span></code></pre>
+<p>The <code>minStep</code> is the minimum update interval in milliseconds.</p>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2024-06-24.
+    </footer>
+  </body>
+</html>

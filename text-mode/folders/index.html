@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Folders</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li>
+<li><a href="/text-mode/">Text Mode</a></li></ul>
+        </nav>
+        <h1>Folders</h1>
+        <p>Folders are a structuring mechanism. Each folder must have a title specified as a string, and they may contain any statement except for another folder (nested folders are not yet supported)</p>
+<pre class="language-js"><code class="language-js">folder <span class="token string">"Basic trig functions!"</span> <span class="token punctuation">{</span>
+  y <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+  y <span class="token operator">=</span> <span class="token function">cos</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+  y <span class="token operator">=</span> <span class="token function">tan</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<h2>Style Mapping</h2>
+<pre class="language-js"><code class="language-js">folder <span class="token string">"title"</span> <span class="token punctuation">{</span>
+  a <span class="token operator">=</span> <span class="token number">3</span>
+  y <span class="token operator">=</span> a <span class="token operator">*</span> x
+<span class="token punctuation">}</span> @<span class="token punctuation">{</span>
+  <span class="token literal-property property">hidden</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">collapsed</span><span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Collapsed doesn't make sense in the context of text mode because they don't actually collapse the text representation of the folder (folders can be collapsed using the text editor, just like tables, style mappings, and similar constructs)</p>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2024-06-24.
+    </footer>
+  </body>
+</html>

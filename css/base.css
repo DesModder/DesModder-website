@@ -1,0 +1,123 @@
+body {
+  font-family: sans-serif;
+  line-height: 1.25;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Inline code is <code>1+2</code>. Code blocks are <pre><code>1+2</code></pre> */
+pre,
+code,
+kbd {
+  padding: 0.2em 0.4em;
+  background: rgba(175, 184, 193, 0.2);
+  margin: 0;
+  width: max-content;
+}
+
+code,
+kbd {
+  white-space: break-spaces;
+  font-size: 87%;
+}
+
+kbd {
+  display: inline-block;
+  line-height: 1;
+  margin-inline: 0.1em;
+  border-radius: 4px;
+  border: 1px solid hsl(210,8%,65%);
+  box-shadow: 0 1px 1px hsla(210,8%,5%,0.15), inset 0 1px 0 0 hsl(0, 0%, 100%)
+}
+
+pre {
+  white-space: pre;
+  width: 100%;
+  overflow-x: auto;
+  padding: 8px;
+}
+
+code {
+  border-radius: 6px;
+}
+
+pre code {
+  padding: unset;
+  background: unset;
+  border: unset;
+  margin: unset;
+  font-size: unset;
+  white-space: unset;
+}
+
+img {
+  width: 100%;
+}
+
+/* Header layout */
+
+header {
+  background: rgb(20 20 20 / 0.2);
+  margin-bottom: 0.8em;
+}
+
+header,
+header nav {
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+}
+
+/* Main layout */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: grid;
+  grid-template-columns: auto calc(min(100%, 850px)) auto;
+}
+
+article {
+  grid-column: 2 / 3;
+  padding-inline: 8px;
+}
+
+/* Footer layout */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  padding: 8px;
+  background: rgb(20 20 20 / 0.2);
+}
+
+/* Breadcrumbs */
+
+.breadcrumb ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  margin: 0;
+}
+
+.breadcrumb li:nth-child(n + 2):before {
+  content: "▸";
+  padding-left: 0.2em;
+}
+
+h1 {
+  margin-top: 0;
+}

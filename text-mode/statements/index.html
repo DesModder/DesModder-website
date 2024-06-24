@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Statement</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li>
+<li><a href="/text-mode/">Text Mode</a></li></ul>
+        </nav>
+        <h1>Statement</h1>
+        <p>Statements are the core of graphs. They are all based around some math expression, with an optional style mapping and (for regressions) a regression value mapping.</p>
+<p>The style mapping options below are listed divided by type of statement because many options are useless for other types. However, this is not currently enforced; unused options are often ignored without a warning.</p>
+<p>As a reminder, press Ctrl+Space while inside a style mapping to preview some available options.</p>
+<h2>Comparison (Equation or Inequality)</h2>
+<pre class="language-js"><code class="language-js"><span class="token comment">// Equation</span>
+y <span class="token operator">=</span> <span class="token number">2</span> <span class="token operator">*</span> x <span class="token operator">+</span> <span class="token number">5</span>
+<span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token function">sin</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span>
+
+<span class="token comment">// Inequality</span>
+y <span class="token operator">&lt;</span> <span class="token number">2</span> <span class="token operator">*</span> x <span class="token operator">+</span> <span class="token number">5</span>
+<span class="token function">sin</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token function">sin</span><span class="token punctuation">(</span>y<span class="token punctuation">)</span> <span class="token operator">>=</span> <span class="token number">0</span></code></pre>
+<h2>Slider</h2>
+<pre class="language-js"><code class="language-js">a <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span></code></pre>
+<h2>Function Definition</h2>
+<pre class="language-js"><code class="language-js"><span class="token function">f</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span> <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token function">f</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>b<span class="token punctuation">,</span>c<span class="token punctuation">)</span> <span class="token operator">=</span> a <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">*</span> b <span class="token operator">+</span> c</code></pre>
+<p>No styles are supported besides the default <code>id</code>, <code>pinned</code>, and <code>errorHidden</code></p>
+<h2>Visualizations</h2>
+<pre class="language-js"><code class="language-js"><span class="token function">stats</span><span class="token punctuation">(</span><span class="token constant">L</span><span class="token punctuation">)</span>
+<span class="token function">histogram</span><span class="token punctuation">(</span><span class="token constant">L</span><span class="token punctuation">)</span>
+<span class="token function">boxplot</span><span class="token punctuation">(</span><span class="token constant">L</span><span class="token punctuation">)</span>
+<span class="token function">dotplot</span><span class="token punctuation">(</span><span class="token constant">L</span><span class="token punctuation">)</span>
+<span class="token function">independentTTest</span><span class="token punctuation">(</span><span class="token constant">L</span><span class="token punctuation">,</span><span class="token constant">M</span><span class="token punctuation">)</span>
+<span class="token function">TTest</span><span class="token punctuation">(</span><span class="token constant">L</span><span class="token punctuation">)</span></code></pre>
+<p>TODO vizProps styles</p>
+<h2>Regression</h2>
+<pre class="language-js"><code class="language-js">a <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">~</span> <span class="token function">sin</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+residuals <span class="token operator">=</span> y1 <span class="token operator">~</span> a <span class="token operator">*</span> x1 <span class="token operator">+</span> b
+y1 <span class="token operator">~</span> a <span class="token operator">*</span> x1 <span class="token operator">+</span> b # <span class="token punctuation">{</span>
+  a <span class="token operator">=</span> <span class="token number">2.3</span>
+  b <span class="token operator">=</span> <span class="token number">4.7</span>
+<span class="token punctuation">}</span></code></pre>
+<h2>Constant calculations</h2>
+<pre class="language-js"><code class="language-js"><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">7</span><span class="token operator">/</span><span class="token number">2</span> @<span class="token punctuation">{</span> <span class="token literal-property property">displayEvaluationAsFraction</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span></code></pre>
+<h2>Style Mapping</h2>
+<h3>Lines, Points, and Fill</h3>
+<pre class="language-js"><code class="language-js">y <span class="token operator">&lt;</span> <span class="token number">2</span> <span class="token operator">*</span> x <span class="token operator">+</span> <span class="token number">5</span> @<span class="token punctuation">{</span>
+  <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token constant">BLUE</span><span class="token punctuation">,</span>
+  <span class="token comment">// fill opacity</span>
+  <span class="token literal-property property">fill</span><span class="token operator">:</span> <span class="token number">0.5</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">lines</span><span class="token operator">:</span> @<span class="token punctuation">{</span>
+    <span class="token literal-property property">opacity</span><span class="token operator">:</span> <span class="token number">0.5</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">style</span><span class="token operator">:</span> <span class="token string">"DASHED"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<pre class="language-js"><code class="language-js"><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span> @<span class="token punctuation">{</span>
+  <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">"#c74440"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">points</span><span class="token operator">:</span> @<span class="token punctuation">{</span>
+    <span class="token literal-property property">opacity</span><span class="token operator">:</span> <span class="token number">0.9</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">size</span><span class="token operator">:</span> <span class="token number">9</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">style</span><span class="token operator">:</span> <span class="token string">"POINT"</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">drag</span><span class="token operator">:</span> <span class="token string">"XY"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Valid line styles are <code>&quot;SOLID&quot;</code> (default), <code>&quot;DASHED&quot;</code>, and <code>&quot;DOTTED&quot;</code></p>
+<p>Valid point styles are <code>&quot;POINT&quot;</code> (default), <code>&quot;OPEN&quot;</code>, and <code>&quot;CROSS&quot;</code></p>
+<p>Valid drag styles are <code>&quot;AUTO&quot;</code> (default), <code>&quot;NONE&quot;</code>, <code>&quot;X&quot;</code>, <code>&quot;Y&quot;</code>, and <code>&quot;XY&quot;</code></p>
+<h3>Slider styles</h3>
+<pre class="language-js"><code class="language-js">a <span class="token operator">=</span> <span class="token number">5</span> @<span class="token punctuation">{</span>
+  <span class="token literal-property property">slider</span><span class="token operator">:</span> @<span class="token punctuation">{</span>
+    <span class="token literal-property property">playing</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">reversed</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">loopMode</span><span class="token operator">:</span> <span class="token string">"LOOP_FORWARD_REVERSE"</span><span class="token punctuation">,</span>
+    <span class="token comment">// period is specified in milliseconds</span>
+    <span class="token literal-property property">period</span><span class="token operator">:</span> <span class="token number">8000</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">min</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">max</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">step</span><span class="token operator">:</span> <span class="token number">1</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h3>Regression styles</h3>
+<pre class="language-js"><code class="language-js">y1 <span class="token operator">~</span> a <span class="token operator">*</span> b <span class="token operator">^</span> x1 @<span class="token punctuation">{</span> <span class="token literal-property property">logMode</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span></code></pre>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2024-06-24.
+    </footer>
+  </body>
+</html>

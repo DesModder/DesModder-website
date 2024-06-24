@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tables</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li>
+<li><a href="/text-mode/">Text Mode</a></li></ul>
+        </nav>
+        <h1>Tables</h1>
+        <p>Tables are a structuring mechanism for lists. You can think of them as folders restricted to lists.</p>
+<p>The first list is implicitly treated as X values, with all other lists as Y values in their own expressions.</p>
+<p>For example, consider the following table:</p>
+<pre class="language-js"><code class="language-js"><span class="token constant">L</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">]</span>
+table <span class="token punctuation">{</span>
+  x1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+  y1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span>
+  <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span>
+  <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">NaN</span><span class="token punctuation">]</span>
+  <span class="token constant">L</span>
+<span class="token punctuation">}</span></code></pre>
+<p>It is effectively equivalent to a folder</p>
+<pre class="language-js"><code class="language-js"><span class="token constant">L</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">13</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">]</span>
+folder <span class="token string">"title"</span> <span class="token punctuation">{</span>
+  x1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+  y1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span>
+  <span class="token punctuation">(</span>x1<span class="token punctuation">,</span> y1<span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>x1<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>x1<span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token punctuation">(</span>x1<span class="token punctuation">,</span> <span class="token constant">L</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></code></pre>
+<p>(Note that the trailing <code>NaN</code> got removed))</p>
+<p>Tables are not too useful in Text Mode because of this equivalence. They are kept mostly for compatibility with vanilla Desmos.</p>
+<p>However, tables have one property that is impossible to repeat elsewhere: lists of draggable poitns can be obtained with the following code:</p>
+<pre class="language-js"><code class="language-js">table <span class="token punctuation">{</span>
+  <span class="token constant">X</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+  <span class="token constant">Y</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span> @<span class="token punctuation">{</span>
+    <span class="token literal-property property">points</span><span class="token operator">:</span> @<span class="token punctuation">{</span> <span class="token literal-property property">drag</span><span class="token operator">:</span> <span class="token string">"XY"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<h2>Style Mapping</h2>
+<p>The entire table can have a style mapping, which just supports the standard <code>pinned</code>, <code>secret</code>, and <code>id</code>.</p>
+<p>The style mappings for columns after the first are more detailed</p>
+<pre class="language-js"><code class="language-js">table <span class="token punctuation">{</span>
+  <span class="token constant">X</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span>
+  <span class="token constant">Y</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span> @<span class="token punctuation">{</span>
+    <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token constant">BLUE</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">hidden</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">points</span><span class="token operator">:</span> @<span class="token punctuation">{</span>
+      <span class="token literal-property property">opacity</span><span class="token operator">:</span> <span class="token number">0.5</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">size</span><span class="token operator">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">style</span><span class="token operator">:</span> <span class="token string">"CROSS"</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">drag</span><span class="token operator">:</span> <span class="token string">"NONE"</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">lines</span><span class="token operator">:</span> @<span class="token punctuation">{</span>
+      <span class="token literal-property property">opacity</span><span class="token operator">:</span> <span class="token number">0.4</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">style</span><span class="token operator">:</span> <span class="token string">"SOLID"</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Valid line styles are <code>&quot;SOLID&quot;</code> (default), <code>&quot;DASHED&quot;</code>, and <code>&quot;DOTTED&quot;</code></p>
+<p>Valid point styles are <code>&quot;POINT&quot;</code> (default), <code>&quot;OPEN&quot;</code>, and <code>&quot;CROSS&quot;</code></p>
+<p>Valid drag styles are <code>&quot;AUTO&quot;</code> (default), <code>&quot;NONE&quot;</code>, <code>&quot;X&quot;</code>, <code>&quot;Y&quot;</code>, and <code>&quot;XY&quot;</code></p>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2024-06-24.
+    </footer>
+  </body>
+</html>

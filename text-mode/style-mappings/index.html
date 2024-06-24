@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Style Mappings</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li>
+<li><a href="/text-mode/">Text Mode</a></li></ul>
+        </nav>
+        <h1>Style Mappings</h1>
+        <p>Text Mode doesn't rely on a varity of UIs for styles; instead it uses a consistent style mapping syntax. A style mapping starts with <code>@{</code> and ends with <code>}</code>. Each entry in the mapping is of the form <code>property_name: value</code>, and they must be comma-separated.</p>
+<p>Style mappings are used mostly for style-related options, such as color, size, opacity, visibility, label placement, image size, etc.</p>
+<p>For example, the following Text Mode code creates a 25-pixel-wide blue line with opacity 0.5.</p>
+<pre class="language-js"><code class="language-js">y <span class="token operator">=</span> x @<span class="token punctuation">{</span>
+  <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token constant">BLUE</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">lines</span><span class="token operator">:</span> @<span class="token punctuation">{</span> <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">25</span><span class="token punctuation">,</span> <span class="token literal-property property">opacity</span><span class="token operator">:</span> <span class="token number">0.5</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Style mappings are also used for functional options, such as IDs, slider bounds, drag modes, etc.</p>
+<pre class="language-js"><code class="language-js">a <span class="token operator">=</span> <span class="token number">3</span> @<span class="token punctuation">{</span>
+  <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">"1"</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">slider</span><span class="token operator">:</span> @<span class="token punctuation">{</span> <span class="token literal-property property">min</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token literal-property property">max</span><span class="token operator">:</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token literal-property property">step</span><span class="token operator">:</span> <span class="token number">1</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">(</span>a<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span> @<span class="token punctuation">{</span>
+  <span class="token literal-property property">points</span><span class="token operator">:</span> @<span class="token punctuation">{</span> <span class="token literal-property property">drag</span><span class="token operator">:</span> <span class="token string">"AUTO"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></code></pre>
+<p>Style mappings can be applied to all item types. Every item type supports the <code>id: string</code> and <code>secret: boolean</code> properties, and most (statements, tables, images, text) support <code>pinned: boolean</code>. For more specific options, see each item type article.</p>
+<ul><li><a href="/text-mode/expressions/">Math Expressions</a></li>
+<li><a href="/text-mode/folders/">Folders</a></li>
+<li><a href="/text-mode/hotkeys/">Hotkeys</a></li>
+<li><a href="/text-mode/images/">Images</a></li>
+<li><a href="/text-mode/settings/">Settings</a></li>
+<li><a href="/text-mode/statements/">Statement</a></li>
+<li><a href="/text-mode/style-mappings/">Style Mappings</a></li>
+<li><a href="/text-mode/tables/">Tables</a></li>
+<li><a href="/text-mode/text/">Text</a></li>
+<li><a href="/text-mode/tickers/">Tickers</a></li></ul>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2024-06-24.
+    </footer>
+  </body>
+</html>

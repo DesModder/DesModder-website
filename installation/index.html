@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Installation</title>
+    <link rel="stylesheet" href="/css/base.css" />
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link
+      href="https://unpkg.com/prismjs@1.20.0/themes/prism-okaidia.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="/">
+        <img src="/img/icon-48.png" alt="">
+      </a>
+      <nav>
+        <a href="/"> DesModder </a>
+        
+          <a href="/installation/">Installation</a>
+        
+      </nav>
+    </header>
+    <main>
+      <article>
+        <nav class="breadcrumb" aria-label="breadcrumbs">
+          <ul><li><a href="/">DesModder</a></li></ul>
+        </nav>
+        <h1>Installation</h1>
+        <h2>Preferred: Install from Webstore</h2>
+<p>You can install the stable version of DesModder <a href="https://chrome.google.com/webstore/detail/desmodder-for-desmos/eclmfdfimjhkmjglgdldedokjaemjfjp">directly from the Chrome Web Store</a> or <a href="https://addons.mozilla.org/en-US/firefox/addon/desmodder-for-desmos/">from the Firefox Web Store</a>.</p>
+<p>DesModder is currently only supported for Google Chrome, Chromium-based browsers such as Opera, Brave, and Vivaldi, and Firefox (or Firefox based browsers).</p>
+<p>The extension updates every few weeks (see DesModder releases page for a history).</p>
+<hr>
+<h2>Advanced: Install from ZIP</h2>
+<p>To install versions that are not available on the Chrome or Firefox web stores, first download the correct version as a ZIP file, then install it.</p>
+<h3>Download</h3>
+<p>Sometimes the Chrome web store takes a few days to approve new extension releases. To download the latest stable release:</p>
+<ol>
+<li>Open <a href="https://github.com/DesModder/DesModder/releases">DesModder Releases</a></li>
+<li>Download <code>DesModder-Chrome-[version].zip</code> (for Chrome or Chromium-based browsers) or <code>DesModder-Firefox-[version].zip</code> (for Firefox).</li>
+</ol>
+<p>Nightly pre-release builds are available to try the latest features as they are added. Warning: there may be issues with these versions. Take care. To download nightly releases:</p>
+<ol>
+<li>Navigate to <a href="https://nightly.link/DesModder/DesModder/workflows/build/main">the nightly builds page</a>.</li>
+<li>Click the link in the <strong>right</strong> column corresponding to your browser. Chrome builds start with &quot;DesModder-Chrome&quot;, and Firefox builds start with &quot;DesModder-Firefox&quot;</li>
+</ol>
+<h3>Install (Chrome and Other Browsers)</h3>
+<p>To install your downloaded <code>DesModder-Chrome-[version].zip</code>:</p>
+<ol start="3">
+<li>Unzip (extract) the downloaded zip file to a folder</li>
+<li>Navigate to <code>chrome://extensions</code></li>
+<li>Enable &quot;Developer mode&quot; (top-right)</li>
+<li>Click &quot;Load unpacked&quot;</li>
+<li>Select the unzipped folder</li>
+<li>If you already have DesModder from the webstore, <strong>disable</strong> that version.
+The prerelease version will have a red dot by its logo.</li>
+</ol>
+<p>If you get the error &quot;Manifest file is missing or unreadable&quot; in step 5, make sure you selected the folder itself and not a folder containing it.
+The correct folder will have a file called <code>manifest.json</code> directly inside.</p>
+<p><img src="./prerelease-chrome.png" alt="Labelled extensions page"></p>
+<h3>Install (Firefox)</h3>
+<p>To install your downloaded <code>DesModder-Firefox-[version].zip</code>:</p>
+<ol start="3">
+<li>Navigate to <code>about:debugging</code></li>
+<li>Choose &quot;This Firefox&quot; on the left</li>
+<li>Click &quot;Temporary Extensions&quot;</li>
+<li>Click &quot;Load Temporary Add-on&quot;</li>
+<li>Select the downloaded zip file (do not extract).</li>
+</ol>
+<p><img src="./prerelease-firefox.png" alt="Labelled debugging page"></p>
+
+      </article>
+    </main>
+    <footer>
+      Page created 2024-06-24.
+    </footer>
+  </body>
+</html>

@@ -52,6 +52,10 @@ pre code {
   white-space: unset;
 }
 
+img {
+  width: 100%;
+}
+
 /* Header layout */
 
 header {
